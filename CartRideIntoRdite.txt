@@ -1,0 +1,90 @@
+game.Workspace.Carts.Name = "hey"
+wait(0.1)
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local X = Material.Load({
+	Title = "EntoriX",
+	Style = 2,
+	SizeX = 700,
+	SizeY = 405,
+	Theme = "Dark",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(38, 34, 34)
+	}
+})
+
+local T = X.New({
+  Title = "For Troll"  
+})
+
+local B = T.Toggle({
+	Text = "SpeedAllCarts",
+    Callback = function(Value)
+        _G.Destroy = (Value)
+        while _G.Destroy do
+        wait(0.1)
+        for i,v in pairs(game.Workspace.hey:GetChildren()) do
+               fireclickdetector(v.Up.Click)
+            end
+            end
+        end,
+	Enabled = false
+})
+
+
+local B = T.Toggle({
+	Text = "SlowAllCarts",
+    Callback = function(Value)
+        _G.Destroyd = (Value)
+        while _G.Destroyd do
+        wait(0.1)
+        for i,v in pairs(game.Workspace.hey:GetChildren()) do
+               fireclickdetector(v.Down.Click)
+            end
+            end
+        end,
+	Enabled = false
+})
+
+local K = X.New({
+	Title = "Cart Option"
+})
+
+local B = K.Toggle({
+	Text = "Spam Spawn Carts",
+    Callback = function(Value)
+        _G.Destroys = (Value)
+        while _G.Destroys do
+        wait(0.1)
+        for i,v in pairs(game.Workspace.Carts:GetChildren()) do
+               fireclickdetector(v.Click)
+            end
+            end
+        end,
+	Enabled = false
+})
+
+
+local B = K.Toggle({
+	Text = "Disable All carts",
+    Callback = function(Value)
+        for i,v in pairs(game.Workspace.hey:GetChildren()) do
+               fireclickdetector(v.On.Click)
+            end
+        end,
+	Enabled = false
+})
+
+local B = K.Toggle({
+	Text = "Loop turn on/off",
+    Callback = function(Value)
+        _G.disable = (Value)
+        while _G.disable do
+            wait(0.1)
+        for i,v in pairs(game.Workspace.hey:GetChildren()) do
+               fireclickdetector(v.On.Click)
+            end
+        end
+        end,
+	Enabled = false
+})

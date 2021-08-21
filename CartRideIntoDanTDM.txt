@@ -1,0 +1,67 @@
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local UI = Material.Load({
+     Title = "EntoriX",
+     Style = 1,
+     SizeX = 700,
+     SizeY = 405,
+     Theme = "Dark",
+      ColorOverrides = {
+        MainFrame = Color3.fromRGB(2, 2, 2)
+      }
+
+    })
+local Page = UI.New({
+    Title = "Cart"
+})
+
+Page.Button({
+        Text = "Spasm",
+        Callback = function()
+    _G.Loopname = true
+    while _G.Loopname do
+    wait(0.1)
+    for i,v in pairs(workspace:GetDescendants()) do
+			if v:IsA("ClickDetector") then
+				fireclickdetector(v)
+		end 
+     end
+   end
+end
+})
+
+Page.Button({
+        Text = "Stop Spasm",
+        Callback = function()
+    _G.Loopname = true
+    while _G.Loopname do
+    wait(0.1)
+    for i,v in pairs(workspace:GetDescendants()) do
+			if v:IsA("ClickDetector") then
+				fireclickdetector(v)
+      end
+     end
+    end
+   end
+  })
+end
+
+--Cart ride into minions for admin
+
+if game.PlaceId == 70934006 then
+    loadstring(game:HttpGet("https://pastebin.com/raw/SgG3ViUC"))()
+
+
+ 
+ 
+
+
+
+
+--loadstring(game:HttpGet("https://pastebin.com/raw/DtepAWxp"))()
+
+
+
+
+
+end

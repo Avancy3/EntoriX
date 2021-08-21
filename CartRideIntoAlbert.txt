@@ -1,0 +1,119 @@
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local UI = Material.Load({
+     Title = "EntoriX",
+     Style = 2,
+     SizeX = 700,
+     SizeY = 405,
+     Theme = "Dark",
+      ColorOverrides = {
+        MainFrame = Color3.fromRGB(2, 2, 2)
+      }
+
+    })
+
+
+ local Page = UI.New({
+        Title = "Cart"
+    })
+
+    Page.Button({
+        Text = "SlowAllCarts",
+        Callback = function()
+    _G.Loopname = true
+    while _G.Loopname do
+    wait(0.1)
+    for i,v in pairs(game.Workspace.Carts:GetDescendants()) do
+           if v:FindFirstChild("Down") then
+           fireclickdetector(v.Down.Click)
+          
+        end
+    end 
+end
+end
+
+
+  
+    })
+
+    Page.Button({
+        Text = "FastAllCarts",
+        Callback = function()
+    _G.Loopname = true
+    while _G.Loopname do
+    wait(0.1)
+    for i,v in pairs(game.Workspace.Carts:GetDescendants()) do
+           if v:FindFirstChild("Up") then
+           fireclickdetector(v.Up.Click)
+          
+        end
+    end 
+end
+end
+    })  
+
+    Page.Button({
+        Text = "On/Off Troll",
+        Callback = function()
+    _G.Loopname = true
+    while _G.Loopname do
+    wait(0.1)
+    for i,v in pairs(game.Workspace.Carts:GetDescendants()) do
+           if v:FindFirstChild("On") then
+           fireclickdetector(v.On.Click)
+          
+        end
+    end 
+end
+end
+    })  
+
+    Page.Button({
+        Text = "Stop All",
+        Callback = function()
+    _G.Loopname = false
+    while _G.Loopname do
+    wait(0.1)
+    for i,v in pairs(game.Workspace.Carts:GetDescendants()) do
+           if v:FindFirstChild("On") then
+           fireclickdetector(v.On.Click)
+           for i,v in pairs(game.Workspace.Carts:GetDescendants()) do
+            if v:FindFirstChild("Up") then
+            fireclickdetector(v.Up.Click)
+            for i,v in pairs(game.Workspace.Carts:GetDescendants()) do
+                if v:FindFirstChild("Up") then
+                fireclickdetector(v.Up.Click)     
+        end
+    end 
+end
+end
+end
+end
+end
+end
+    })
+
+    Page.Button({
+        Text = "RegenAllCarts",
+        Callback = function()
+    _G.Loopname = true
+    while _G.Loopname do
+    wait(0.1)
+    fireclickdetector(game:GetService("Workspace").Carts["8Regen"].Click)
+    fireclickdetector(game:GetService("Workspace").Carts["4Regen"].Click)
+    fireclickdetector(game:GetService("Workspace").Carts["2Regen"].Click)
+    fireclickdetector(game:GetService("Workspace").Carts["1Regen"].Click)
+          
+        end
+    end 
+    })
+    Page.Button({
+        Text = "Winner",
+        Callback = function()
+           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-465, 780, -443)
+           wait (1.5)
+           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(64, 5, -80)
+    end
+    })
+
+
